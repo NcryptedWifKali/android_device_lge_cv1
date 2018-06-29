@@ -1,1 +1,1 @@
-# Twrp Build Tree For Lg Stylo 2 Plus
+# TWRP Build Tree For LG Aristo 2 CV1

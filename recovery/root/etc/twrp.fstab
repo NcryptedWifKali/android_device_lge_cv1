@@ -8,8 +8,13 @@
 /data           ext4      /dev/block/bootdevice/by-name/userdata             flags=encryptable=/dev/block/bootdevice/by-name/encrypt
 /cache          ext4      /dev/block/bootdevice/by-name/cache
 /misc           emmc      /dev/block/bootdevice/by-name/misc
+/ftm            emmc      /dev/block/bootdevice/by-name/ftm
 
-/firmware       vfat      /dev/block/bootdevice/by-name/modem                flags=display="Firmware";mounttodecrypt
-/persist        ext4      /dev/block/bootdevice/by-name/persist              flags=display="Persist";backup=1
+#/carrier        ext4      /dev/block/bootdevice/by-name/carrier              flags=display="Carrier";backup=1
+/firmware       vfat      /dev/block/bootdevice/by-name/modem                flags=display="Firmware";backup=1;mounttodecrypt
+/persist-lg     ext4      /dev/block/bootdevice/by-name/drm                  flags=display="Persist";backup=1
+/OP             ext4      /dev/block/bootdevice/by-name/OP                   flags=display="OP";backup=1
+#/sns            ext4      /dev/block/bootdevice/by-name/sns                  flags=display="sns";backup=1
 
 /sdcard1        auto      /dev/block/mmcblk1p1                               flags=display="MicroSD";storage;wipeingui;removable
+/usb-otg	vfat	/dev/block/sda1 /dev/block/sda				flags=display="USB-OTG";storage;wipeingui;removable

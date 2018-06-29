@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/lge/ph2n
+DEVICE_PATH := device/lge/cv1
 
 TARGET_BOARD_VENDOR := lge
 
@@ -31,8 +31,8 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
-TARGET_BOARD_SUFFIX := _64
-TARGET_USES_64_BIT_BINDER := true
+TARGET_BOARD_SUFFIX := _32
+TARGET_USES_64_BIT_BINDER := false
 
 TARGET_BOARD_PLATFORM := msm8937
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno505
@@ -46,14 +46,14 @@ TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 
 # Kernel
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 androidboot.hardware=ph2n androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 androidboot.hardware=cv1 androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 TARGET_KERNEL_APPEND_DTB := true
 #KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.8/bin
-#TARGET_KERNEL_SOURCE := kernel/lge/ph2n
-#TARGET_KERNEL_CONFIG := ph2n_mpcs_us-perf_defconfig
+#TARGET_KERNEL_SOURCE := kernel/lge/cv1
+#TARGET_KERNEL_CONFIG := cv1_mpcs_us-perf_defconfig
 #TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/kernel
 
